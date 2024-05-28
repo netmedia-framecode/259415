@@ -1,0 +1,46 @@
+[2024-05-27 08:35:44] Error [8]: Undefined variable: views_jenis_kuliner in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\jenis-kuliner.php on line 31
+[2024-05-27 08:35:44] Error [2]: Invalid argument supplied for foreach() in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\jenis-kuliner.php on line 31
+[2024-05-27 08:35:51] Error [8]: Undefined variable: views_jenis_kuliner in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\jenis-kuliner.php on line 31
+[2024-05-27 08:35:51] Error [2]: Invalid argument supplied for foreach() in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\jenis-kuliner.php on line 31
+[2024-05-27 08:35:59] Error [8]: Undefined variable: views_jenis_kuliner in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\jenis-kuliner.php on line 31
+[2024-05-27 08:35:59] Error [2]: Invalid argument supplied for foreach() in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\jenis-kuliner.php on line 31
+[2024-05-27 08:41:58] Error [8]: Undefined variable: views_jenis_kuliner in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\list-kuliner.php on line 114
+[2024-05-27 08:41:58] Error [2]: Invalid argument supplied for foreach() in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\list-kuliner.php on line 114
+[2024-05-27 08:55:37] Error [8]: Undefined variable: views_jenis_kuliner in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\list-kuliner.php on line 185
+[2024-05-27 08:55:37] Error [2]: Invalid argument supplied for foreach() in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\list-kuliner.php on line 185
+[2024-05-27 17:59:59] Error [8]: Undefined variable: views_jenis_kuliner in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\list-kuliner.php on line 106
+[2024-05-27 17:59:59] Error [2]: Invalid argument supplied for foreach() in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\list-kuliner.php on line 106
+[2024-05-27 18:26:11] Error [8]: Undefined index: nama_kuliner in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\video.php on line 66
+[2024-05-27 18:30:26] Error [8]: Undefined index: nama_kuliner in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\video.php on line 66
+[2024-05-27 18:40:59] Error [8]: Undefined variable: view_kuliner in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\tempat-wisata.php on line 41
+[2024-05-27 18:40:59] Error [2]: Invalid argument supplied for foreach() in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\tempat-wisata.php on line 41
+[2024-05-27 18:40:59] Error [8]: Undefined variable: view_jenis_kuliner in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\tempat-wisata.php on line 185
+[2024-05-27 18:40:59] Error [2]: Invalid argument supplied for foreach() in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\tempat-wisata.php on line 185
+[2024-05-27 18:52:53] Error [8]: Undefined index: id_wisata in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\tempat-wisata.php on line 42
+[2024-05-27 18:52:53] Error [8]: Undefined index: id_wisata in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\tempat-wisata.php on line 43
+[2024-05-27 18:53:13] Error [8]: Undefined index: id_wisata in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\tempat-wisata.php on line 42
+[2024-05-27 18:53:13] Error [8]: Undefined index: id_wisata in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\tempat-wisata.php on line 43
+[2024-05-27 18:53:13] Error [8]: Undefined index: id_wisata in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\tempat-wisata.php on line 42
+[2024-05-27 18:53:13] Error [8]: Undefined index: id_wisata in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\tempat-wisata.php on line 43
+[2024-05-27 21:32:40] Error [8]: Trying to get property 'num_rows' of non-object in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 119
+[2024-05-27 21:33:17] Error [8]: Trying to get property 'num_rows' of non-object in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 119
+[2024-05-27 21:35:11] Error [8]: Undefined variable: dataGrafik in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 142
+[2024-05-27 21:35:14] Error [8]: Undefined variable: dataGrafik in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 142
+[2024-05-27 21:35:16] Error [8]: Undefined variable: dataGrafik in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 142
+[2024-05-27 21:36:28] Error [8]: Undefined variable: dataGrafik in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 142
+[2024-05-27 22:05:23] Error [8]: Undefined variable: count_kuliner in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 23
+[2024-05-27 22:05:23] Error [2]: mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 23
+[2024-05-27 22:05:23] Error [8]: Undefined variable: count_tempat_wisata in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 40
+[2024-05-27 22:05:23] Error [2]: mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 40
+[2024-05-27 22:05:23] Error [8]: Undefined variable: count_video in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 57
+[2024-05-27 22:05:23] Error [2]: mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 57
+[2024-05-27 22:05:23] Error [8]: Undefined variable: count_kontak in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 74
+[2024-05-27 22:05:23] Error [2]: mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 74
+[2024-05-27 22:05:35] Error [8]: Undefined variable: count_kuliner in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 23
+[2024-05-27 22:05:35] Error [2]: mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 23
+[2024-05-27 22:05:35] Error [8]: Undefined variable: count_tempat_wisata in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 40
+[2024-05-27 22:05:35] Error [2]: mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 40
+[2024-05-27 22:05:35] Error [8]: Undefined variable: count_video in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 57
+[2024-05-27 22:05:35] Error [2]: mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 57
+[2024-05-27 22:05:35] Error [8]: Undefined variable: count_kontak in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 74
+[2024-05-27 22:05:35] Error [2]: mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in E:\laragon\www\apps\tugas\wisata_kuliner_khas_bajawa\views\index.php on line 74
