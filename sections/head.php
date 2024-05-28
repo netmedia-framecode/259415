@@ -1,8 +1,8 @@
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Broccoli - Organic Food HTML Template</title>
+<title>Wisata Kuliner & Obyek Wisata Bajawa</title>
 <meta name="robots" content="noindex, follow" />
-<meta name="description" content="">
+<meta name="description" content="Keanekaragaman budaya disini tercermin dalam tradisi adat, bahasa, dan seni budaya. Kaya akan berbagai kuliner dan teknik pengawetan makanan dan acara adat">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Place favicon.png in the root directory -->
