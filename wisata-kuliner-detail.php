@@ -74,7 +74,7 @@ if (!isset($_GET['post'])) {
                   <li>
                     <div class="popular-post-widget-item clearfix">
                       <div class="popular-post-widget-img">
-                        <a href="wisata-kuliner-detail?post=<?= $data['id_kuliner'] ?>"><img src="assets/img/kuliner/<?= $data['image_kuliner'] ?>" alt="#"></a>
+                        <a href="wisata-kuliner-detail?post=<?= $data['id_kuliner'] ?>"><img src="assets/img/kuliner/<?= $data['image_kuliner'] ?>" class="rounded-0" style="width: 60px; height: 60px; object-fit: cover;" alt="#"></a>
                       </div>
                       <div class="popular-post-widget-brief">
                         <h6><a href="wisata-kuliner-detail?post=<?= $data['id_kuliner'] ?>"><?= $data['nama_kuliner'] ?></a></h6>

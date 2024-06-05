@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 28 Bulan Mei 2024 pada 00.31
--- Versi server: 8.3.0
--- Versi PHP: 7.4.30
+-- Waktu pembuatan: 05 Jun 2024 pada 02.40
+-- Versi server: 8.0.30
+-- Versi PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `auth` (
   `id` int NOT NULL,
-  `image` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `bg` varchar(35) COLLATE utf8mb4_general_ci DEFAULT NULL
+  `image` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `bg` varchar(35) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `auth` (
 --
 
 INSERT INTO `auth` (`id`, `image`, `bg`) VALUES
-(1, 'auth.jpg', '#4e73de');
+(1, 'auth.jpg', '#514edf');
 
 -- --------------------------------------------------------
 
@@ -60,8 +60,7 @@ CREATE TABLE `galeri` (
 --
 
 INSERT INTO `galeri` (`id_galeri`, `id_tipe_fitur`, `id_fitur`, `image_galeri`, `created_at`, `updated_at`) VALUES
-(2, 2, 1, '481614208.jpg', '2024-05-28 03:15:59', '2024-05-28 03:15:59'),
-(3, 1, 2, '556180812.jpg', '2024-05-28 03:17:57', '2024-05-28 03:17:57');
+(5, 1, 9, '2553248616.jpg', '2024-05-30 02:11:18', '2024-05-30 02:11:18');
 
 -- --------------------------------------------------------
 
@@ -71,7 +70,7 @@ INSERT INTO `galeri` (`id_galeri`, `id_tipe_fitur`, `id_fitur`, `image_galeri`, 
 
 CREATE TABLE `jenis_kuliner` (
   `id_jenis_kuliner` int NOT NULL,
-  `jenis_kuliner` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `jenis_kuliner` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -92,10 +91,10 @@ INSERT INTO `jenis_kuliner` (`id_jenis_kuliner`, `jenis_kuliner`, `created_at`, 
 
 CREATE TABLE `kontak` (
   `id_kontak` int NOT NULL,
-  `username` varchar(75) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `email` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `phone` char(12) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `pesan` text COLLATE utf8mb4_general_ci,
+  `username` varchar(75) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `phone` char(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `pesan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -106,7 +105,9 @@ CREATE TABLE `kontak` (
 
 INSERT INTO `kontak` (`id_kontak`, `username`, `email`, `phone`, `pesan`, `created_at`, `updated_at`) VALUES
 (1, 'tes', 'tes@gmail.com', '08138', 'tes', '2024-05-28 07:16:46', '2024-05-28 07:16:46'),
-(2, 'tes', 'tes@gmail.com', '08138', 'tes', '2024-05-28 07:18:13', '2024-05-28 07:18:13');
+(2, 'tes', 'tes@gmail.com', '08138', 'tes', '2024-05-28 07:18:13', '2024-05-28 07:18:13'),
+(3, 'redi', 'tantilobo0@gmail.com', '082374594589', 'hai kamu', '2024-05-30 02:03:00', '2024-05-30 02:03:00'),
+(4, 'emi', 'tantilobo0@gmail.com', '082374594589', 'kamu punya', '2024-05-30 02:03:42', '2024-05-30 02:03:42');
 
 -- --------------------------------------------------------
 
@@ -116,11 +117,11 @@ INSERT INTO `kontak` (`id_kontak`, `username`, `email`, `phone`, `pesan`, `creat
 
 CREATE TABLE `kuliner` (
   `id_kuliner` int NOT NULL,
-  `image_kuliner` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `nama_kuliner` varchar(75) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `image_kuliner` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `nama_kuliner` varchar(75) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `id_jenis_kuliner` int DEFAULT NULL,
-  `deskripsi` text COLLATE utf8mb4_general_ci,
-  `author` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `deskripsi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `author` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `pembaca` int DEFAULT '0',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -131,7 +132,14 @@ CREATE TABLE `kuliner` (
 --
 
 INSERT INTO `kuliner` (`id_kuliner`, `image_kuliner`, `nama_kuliner`, `id_jenis_kuliner`, `deskripsi`, `author`, `pembaca`, `created_at`, `updated_at`) VALUES
-(2, '623374299.png', 'tes', 1, '<p><strong>Lorem ipsum</strong> dolor sit amet consectetur, adipisicing elit. Maxime ullam cupiditate veniam beatae officiis minima dolores, unde perspiciatis, ipsam repudiandae hic molestias ipsum exercitationem eius optio perferendis ad quis eligendi debitis sint. Voluptates illum placeat tempora laborum, quo non ducimus dicta maiores soluta consectetur nulla, temporibus eum doloribus optio quia accusamus quas est esse minima voluptatibus illo ea.</p>\r\n\r\n<p>Eum, quo officia repudiandae ex temporibus quas obcaecati quis at quam, dolorum omnis, sapiente reprehenderit laborum atque ab? Amet facilis quos recusandae explicabo similique ipsa accusantium accusamus reprehenderit laudantium nam eum cupiditate, dolore debitis minus voluptate quae unde, officia, error consectetur est voluptates! Vel, ut.</p>\r\n\r\n<p>Earum in, a quaerat saepe, cupiditate sapiente quis facilis incidunt quia, molestias nulla dolor at dicta eveniet distinctio soluta? Fugiat laborum iure vitae eum ullam nostrum perspiciatis beatae quo. Repudiandae praesentium, sunt magni dignissimos quo maiores amet numquam obcaecati commodi dolor, laborum quisquam consectetur maxime aspernatur. Ipsum eius obcaecati sit, laudantium ipsa ea reiciendis sed nulla tempore numquam aspernatur, dignissimos ex repudiandae facilis eligendi at cupiditate aliquam alias qui nostrum perferendis!</p>\r\n\r\n<p>Quidem quos, odit natus architecto culpa eius laborum asperiores in debitis quisquam temporibus molestias quaerat autem. Sunt, harum voluptatum! Tempore culpa voluptate ratione reiciendis distinctio commodi dolorum reprehenderit fugit officia? Quo est, commodi maxime molestiae, adipisci blanditiis fugit mollitia enim nemo minus id autem maiores? Sed pariatur nisi minus excepturi blanditiis, quia animi illo consequatur tenetur omnis vero optio voluptatem? Distinctio iure facilis assumenda omnis eligendi.</p>\r\n\r\n<p>Debitis, impedit deserunt! Beatae similique quasi sit harum sunt maxime. Repellendus molestiae consectetur odit repellat assumenda tempora nobis voluptas laboriosam, sed dolorem sapiente totam natus voluptates beatae repudiandae commodi maiores facilis nam autem! Temporibus, aspernatur possimus. Consequatur earum voluptatibus illum maiores dolore assumenda quis minima, sequi aliquam voluptate magnam quam reiciendis iste pariatur quos accusamus consectetur eius unde qui placeat incidunt labore eum ipsa animi.</p>\r\n\r\n<p>Quasi labore, optio aut molestias quos voluptatum eum doloribus minus odio modi eius corporis. Modi commodi aliquam pariatur iusto possimus aut nobis recusandae voluptatibus, quia obcaecati harum, dignissimos a dolores dolore labore, suscipit eum quo saepe corrupti libero iste? Facere autem eum reiciendis. Corrupti quidem recusandae, delectus velit atque eligendi laudantium commodi. Dignissimos similique provident delectus voluptas iste quae voluptatem autem nobis perspiciatis dicta illo ad, ipsa animi accusantium! Dolores ut deleniti autem facilis dignissimos fugiat ea beatae corporis impedit, libero aliquid tempora omnis qui delectus suscipit, officia dicta id voluptates doloribus minus optio! Cumque expedita alias recusandae vero error soluta nihil, eum est, temporibus molestiae obcaecati aliquam cupiditate nam asperiores atque accusantium unde deserunt voluptates exercitationem veritatis mollitia sint quam.</p>\r\n\r\n<p><strong>Distinctio est</strong> tenetur consectetur quam ipsum vitae voluptas aspernatur iusto? Dolores, similique assumenda? Autem, doloribus. Assumenda perferendis laboriosam tempora harum consequuntur doloremque adipisci dicta, pariatur, delectus deserunt porro non corporis odio, similique sequi esse nam ad quaerat ut reprehenderit? Pariatur illum modi ipsa obcaecati animi labore eveniet inventore cum consequuntur repellendus eligendi illo ad earum suscipit nisi tempore quaerat deleniti, accusamus recusandae! Excepturi numquam est, dolorum vel eius deleniti officia dolore tempora <em>sapiente repellendus</em>!</p>\r\n', 'develoepr', 11, '2024-05-28 02:06:01', '2024-05-28 08:15:35');
+(2, '2452457385.jpg', 'MAKANAN KHAS BAJAWA RA\\\\\\&#039;A RETE', 1, '<p>Masakan ini merupakan jenis masakan daging yang dibumbui bersama parutan kelapa. Bumbu-bumbunya sederhana dan cara memasaknya pun tidak rumit.</p>\r\n', 'develoepr', 20, '2024-05-28 02:06:01', '2024-05-29 20:30:09'),
+(3, '778705521.jpg', 'URAP DAUN SINGKONG', 1, '<p><big><em>Urap daun singkong</em>&nbsp;merupakan salah satu masakan yang terbuat dari&nbsp;<em>daun singkong</em>&nbsp;yang direbus lalu dicampur dengan parutan kelapa berbumbu pedas.</big></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<h2>Bahan-bahan</h2>\r\n\r\n<ol>\r\n	<li>1 ikat&nbsp;<a href=\"https://cookpad.com/id/cari/daun%20singkong\">daun singkong</a></li>\r\n	<li>secukupnya&nbsp;<a href=\"https://cookpad.com/id/cari/Kelapa%20parut\">Kelapa parut</a>&nbsp;(pilih&nbsp;<a href=\"https://cookpad.com/id/cari/kelapa\">kelapa</a>&nbsp;yang muda ya)</li>\r\n	<li>Bumbu halus</li>\r\n	<li>3 buah&nbsp;<a href=\"https://cookpad.com/id/cari/bawang%20merah\">bawang merah</a></li>\r\n	<li>2 siung&nbsp;<a href=\"https://cookpad.com/id/cari/bawang%20putih\">bawang putih</a></li>\r\n	<li>1 buah&nbsp;<a href=\"https://cookpad.com/id/cari/cabe%20merah\">cabe merah</a></li>\r\n	<li>3 buah&nbsp;<a href=\"https://cookpad.com/id/cari/cabe%20rawit\">cabe rawit</a>&nbsp;(sesuai selera)</li>\r\n	<li>1/2 sdt&nbsp;<a href=\"https://cookpad.com/id/cari/terasi\">terasi</a>&nbsp;bakar</li>\r\n	<li>1 cm&nbsp;<a href=\"https://cookpad.com/id/cari/kencur\">kencur</a></li>\r\n	<li>2 lembar&nbsp;daun&nbsp;<a href=\"https://cookpad.com/id/cari/jeruk%20purut\">jeruk purut</a></li>\r\n	<li>secukupnya&nbsp;Garam gula</li>\r\n</ol>\r\n', 'admin', 1, '2024-05-29 13:17:31', '2024-05-29 18:14:38'),
+(4, '2035021141.jpg', 'UTA TABHA', 1, '<p>Uta tabha merupakan makan khas orang bajawa yang biasa dicampur dengan sayuran.</p>\r\n\r\n<p>Bahan-bahan:</p>\r\n\r\n<ol>\r\n	<li>Jagung (jagung yang sudah digiling)</li>\r\n	<li>Daun Pepaya</li>\r\n	<li>kacang tanah</li>\r\n	<li>santan kelapa</li>\r\n	<li>kacang merah</li>\r\n	<li>Labu</li>\r\n	<li>Talas</li>\r\n</ol>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n', 'admin', 0, '2024-05-29 13:35:57', '2024-05-29 13:36:30'),
+(5, '2259816112.jpg', 'NASI JAGUNG', 1, '<p>Sesuai namanya, nasi jagung terbuat dari biji jagung tua yang dipipil dari tongkolnya.</p>\r\n\r\n<p>Nah, biji jagung itu kemudian dikeringkan dan dihancurkan lalu dimasak seperti menanak beras pada umumnya.&nbsp;</p>\r\n\r\n<p>Bahan-bahan:</p>\r\n\r\n<ol>\r\n	<li>Jagung</li>\r\n	<li>beras</li>\r\n</ol>\r\n', 'admin', 0, '2024-05-29 13:47:07', '2024-05-29 13:47:07'),
+(6, '885165348.jpg', 'Hui wu\\\\\\&#039;u', 1, '<p>Membuat hui wu&#39;u merupakan salah satu bentuk keterampilan para nenek moyang zaman dulu untuk mengawetkan daging babi menggunakan tepung jagung dan garam yang diawetkan di dalam bambu (tuku).&nbsp;Pembuatan hui wu&#39;u masih dipertahankan dan dilestarikan oleh sejumlah keluarga di Bajawa, Kabupaten Ngada. Hui wu&#39;u sendiri biasanya dicampur dengan daun pepaya untuk menghilangkan rasa pahit.</p>\r\n\r\n<p>Bahan-bahan:</p>\r\n\r\n<ol>\r\n	<li>Daging babi</li>\r\n	<li>Tepung jagung</li>\r\n	<li>Garam</li>\r\n	<li>bambu <em>(tuku)</em></li>\r\n</ol>\r\n', 'admin', 1, '2024-05-29 14:21:50', '2024-05-29 14:23:43'),
+(7, '1567247779.jpg', 'PO\\&#039;O', 1, '<p>po&rsquo;o sendiri yaitu beras yang dimasak<br />\r\ndalam dalam batang bambu yang dicampur dengan beberapa bumbu dan<br />\r\nminyak kelapa. Acara pedhe po&rsquo;o ini biasa dilaksanakan 1 tahun sekali pada&nbsp;bulan oktober sesudah panen.</p>\r\n\r\n<p>Bahan-bahan:</p>\r\n\r\n<ol>\r\n	<li>Beras</li>\r\n	<li>Minyak kelapa</li>\r\n	<li>Bawang putih ( 3 siung)</li>\r\n	<li>Bawang merah ( 4 siung)</li>\r\n	<li>Jahe 2 ruas</li>\r\n</ol>\r\n', 'admin', 1, '2024-05-29 14:50:10', '2024-05-29 18:15:36'),
+(8, '1797939205.jpg', 'NASI KACANG HITAM', 1, '<p>Nasi kacang hitam merupakan campuran nasi yang dimasak dengan kacang merah.</p>\r\n\r\n<p>Bahan-bahan:</p>\r\n\r\n<ol>\r\n	<li>Beras</li>\r\n	<li>Kacang hitam</li>\r\n</ol>\r\n', 'admin', 4, '2024-05-29 15:00:35', '2024-05-30 01:50:00'),
+(9, '2553248616.jpg', 'Tumis Pucuk Daun Labu Siam', 1, '<p>Pucuk Labu Siam dalam bahasa bajawa biasa disebut dengan <em>uta timu</em> selain buahnya dijadikan sayur, daunnya pun kaya akan manfaat bagi kesehatan. Daun labu siam mengandung : vitamin A, vitamin C, kalsium, kaya serat dan rendah kalori.</p>\r\n\r\n<p>Baha-bahan:</p>\r\n\r\n<ol>\r\n	<li>Pucuk labu siam</li>\r\n</ol>\r\n\r\n<p>Bumbu Tumis:</p>\r\n\r\n<ol>\r\n	<li>5 siung bawang merah</li>\r\n	<li>3 siung bawah putih</li>\r\n	<li>3 buah cabe (sesuai selera)</li>\r\n</ol>\r\n', 'admin', 15, '2024-05-29 15:30:30', '2024-05-30 02:16:10');
 
 -- --------------------------------------------------------
 
@@ -141,10 +149,10 @@ INSERT INTO `kuliner` (`id_kuliner`, `image_kuliner`, `nama_kuliner`, `id_jenis_
 
 CREATE TABLE `tempat_wisata` (
   `id_tempat_wisata` int NOT NULL,
-  `image_wisata` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `nama_wisata` varchar(75) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `deskripsi` text COLLATE utf8mb4_general_ci,
-  `author` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `image_wisata` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `nama_wisata` varchar(75) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `deskripsi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `author` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `pembaca` int DEFAULT '0',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -155,7 +163,10 @@ CREATE TABLE `tempat_wisata` (
 --
 
 INSERT INTO `tempat_wisata` (`id_tempat_wisata`, `image_wisata`, `nama_wisata`, `deskripsi`, `author`, `pembaca`, `created_at`, `updated_at`) VALUES
-(1, '623374299.png', 'tes', '<p><strong>Lorem ipsum</strong>&nbsp;dolor sit amet consectetur, adipisicing elit. Maxime ullam cupiditate veniam beatae officiis minima dolores, unde perspiciatis, ipsam repudiandae hic molestias ipsum exercitationem eius optio perferendis ad quis eligendi debitis sint. Voluptates illum placeat tempora laborum, quo non ducimus dicta maiores soluta consectetur nulla, temporibus eum doloribus optio quia accusamus quas est esse minima voluptatibus illo ea.</p>\r\n\r\n<p>Eum, quo officia repudiandae ex temporibus quas obcaecati quis at quam, dolorum omnis, sapiente reprehenderit laborum atque ab? Amet facilis quos recusandae explicabo similique ipsa accusantium accusamus reprehenderit laudantium nam eum cupiditate, dolore debitis minus voluptate quae unde, officia, error consectetur est voluptates! Vel, ut.</p>\r\n\r\n<p>Earum in, a quaerat saepe, cupiditate sapiente quis facilis incidunt quia, molestias nulla dolor at dicta eveniet distinctio soluta? Fugiat laborum iure vitae eum ullam nostrum perspiciatis beatae quo. Repudiandae praesentium, sunt magni dignissimos quo maiores amet numquam obcaecati commodi dolor, laborum quisquam consectetur maxime aspernatur. Ipsum eius obcaecati sit, laudantium ipsa ea reiciendis sed nulla tempore numquam aspernatur, dignissimos ex repudiandae facilis eligendi at cupiditate aliquam alias qui nostrum perferendis!</p>\r\n\r\n<p>Quidem quos, odit natus architecto culpa eius laborum asperiores in debitis quisquam temporibus molestias quaerat autem. Sunt, harum voluptatum! Tempore culpa voluptate ratione reiciendis distinctio commodi dolorum reprehenderit fugit officia? Quo est, commodi maxime molestiae, adipisci blanditiis fugit mollitia enim nemo minus id autem maiores? Sed pariatur nisi minus excepturi blanditiis, quia animi illo consequatur tenetur omnis vero optio voluptatem? Distinctio iure facilis assumenda omnis eligendi.</p>\r\n\r\n<p>Debitis, impedit deserunt! Beatae similique quasi sit harum sunt maxime. Repellendus molestiae consectetur odit repellat assumenda tempora nobis voluptas laboriosam, sed dolorem sapiente totam natus voluptates beatae repudiandae commodi maiores facilis nam autem! Temporibus, aspernatur possimus. Consequatur earum voluptatibus illum maiores dolore assumenda quis minima, sequi aliquam voluptate magnam quam reiciendis iste pariatur quos accusamus consectetur eius unde qui placeat incidunt labore eum ipsa animi.</p>\r\n\r\n<p>Quasi labore, optio aut molestias quos voluptatum eum doloribus minus odio modi eius corporis. Modi commodi aliquam pariatur iusto possimus aut nobis recusandae voluptatibus, quia obcaecati harum, dignissimos a dolores dolore labore, suscipit eum quo saepe corrupti libero iste? Facere autem eum reiciendis. Corrupti quidem recusandae, delectus velit atque eligendi laudantium commodi. Dignissimos similique provident delectus voluptas iste quae voluptatem autem nobis perspiciatis dicta illo ad, ipsa animi accusantium! Dolores ut deleniti autem facilis dignissimos fugiat ea beatae corporis impedit, libero aliquid tempora omnis qui delectus suscipit, officia dicta id voluptates doloribus minus optio! Cumque expedita alias recusandae vero error soluta nihil, eum est, temporibus molestiae obcaecati aliquam cupiditate nam asperiores atque accusantium unde deserunt voluptates exercitationem veritatis mollitia sint quam.</p>\r\n\r\n<p><strong>Distinctio est</strong>&nbsp;tenetur consectetur quam ipsum vitae voluptas aspernatur iusto? Dolores, similique assumenda? Autem, doloribus. Assumenda perferendis laboriosam tempora harum consequuntur doloremque adipisci dicta, pariatur, delectus deserunt porro non corporis odio, similique sequi esse nam ad quaerat ut reprehenderit? Pariatur illum modi ipsa obcaecati animi labore eveniet inventore cum consequuntur repellendus eligendi illo ad earum suscipit nisi tempore quaerat deleniti, accusamus recusandae! Excepturi numquam est, dolorum vel eius deleniti officia dolore tempora&nbsp;<em>sapiente repellendus</em>!</p>\r\n', 'develoepr', 8, '2024-05-28 02:52:53', '2024-05-28 08:19:13');
+(1, '3726351952.jpg', 'RUMAH ADAT BENA', '<p>Kampung Adat Bena merupakan salah satu kampung yang masih mempertahankan kebudayaan dan adat dari lelulur yang telah berlangsung puluhan abad silam. Memiliki 45 rumah adat dengan arsitektur yang unik dan indah Kampong Adat Bena hampir setiap harinya dikunjungi wisatawan.</p>\r\n\r\n<p>Kampung Adat Bena merupakan sebuah perkampungan megalitikum di Pulau Flores, tepatnya di Desa Tiwuriwu, Kecamatan Aimere 19 KM arah selatan kota Bajawa. Dengan menggunakan moda transportasi roda empat maupun roda dua wisatawan dapat mengunjungi kampung adat Bena yang berada tepat di bawah kaki gunung Inerie yang menjulang tinggi dan sering bermahkotakan awan indah. Setiap pengunjung yang datang ke kampung Bena akan disambut&nbsp;&nbsp;dengan keramahtamahan khas masyarakat pedesaan yang penuh kehangatan serta rasa persaudaraan yang tinggi. Udara sejuk serta barisan perumahan adat yang alami menjadi pemandangan yang indah dan menggoda pengunjung untuk melangkakan kaki di sepanjang jalan setapak demi melihat kehidupan warga yang sederhana dengan pajangan hasil tenunan yang kaya akan motif dan filosofi gambaran kearifan budaya leluhur.</p>\r\n', 'develoepr', 10, '2024-05-28 02:52:53', '2024-06-02 23:24:00'),
+(3, '4183099549.jpg', 'AIR TERJUN OGI', '<p>Air Terjun Ogi Bajawa merupakan salah satu objek wisata alam yang terletak di daerah Bajawa Kabupaten Ngada, Flores Nusa Tenggara Timur, Indonesia. Air terjun Ogi ini terkenal karena keindahan alamnya yang masih alami terjaga dan menakjubkan. Air Terjun Ogi memiliki ketinggian kurang lebih sekitar 35 meter dan dikelilingi oleh hutan tropis yang hijau.</p>\r\n\r\n<p>Untuk mencapai Air Terjun Ogi, para wisatawan perlu melakukan perjalanan sekitar 30 kilometer dari pusat kota Bajawa, atau kalau di tempuh dari kota Labuan Bajo perjalanan kurang lebih sekitar 7 jam. Rute perjalanan biasanya dengan jalur darat dengan kendaraan pribadi atau sewa, karena transportasi umum belum tersedia setiap waktu untuk langsung menuju ke air terjun Ogi ini.</p>\r\n\r\n<p>Ketika tiba di Air Terjun Ogi, para wisatawan pengunjung akan disambut dengan pemandangan yang menakjubkan. Pengunjung dapat menikmati keindahan air terjun yang jatuh dengan deras ke area bawah yang membentuk seperti telaga kolam alami. Serta area sekitar air terjun ini yang masih di kelilingi rerimbunan pepohonan yang menambah kesan asri.</p>\r\n', 'admin', 1, '2024-05-28 23:07:14', '2024-05-28 23:07:52'),
+(4, '281277098.jpg', 'BUKIT AVATAR', '<p>Bukit&nbsp;<a href=\"https://flores.tribunnews.com/tag/bukit-avatar-watunariwowo\">Watunariwowo</a>&nbsp;di Bajawa sering disebut bukit avatar. Topografi perbukitan terjalnya mirip perbukitan dalam animasi Avatar The Legende of Aang.</p>\r\n\r\n<p><a href=\"https://flores.tribunnews.com/tag/bukit-avatar-watunariwowo\">Bukit</a>&nbsp;Watunariwowo ini terletak di Desa Beja, Kecamatan Langa, Kabupaten Ngada, Pulau Flores, Nusa Tenggara Timur. Topografinya menantang, bukit ini salah satu tempat wisata alam andalan di Bajawa.</p>\r\n\r\n<p>Bukit avatar<a href=\"https://flores.tribunnews.com/tag/bukit-avatar-watunariwowo\">&nbsp;Bajawa</a>&nbsp;ini sangat terjal hingga ke puncaknya. Vegetasi tumbuhan di puncik bukit ini sebagian besar tanaman savana seperti rumput. Beberapa pohon tumbuh tak jauh dari puncak bukit.</p>\r\n\r\n<p><br />\r\n<br />\r\nArtikel ini telah tayang di&nbsp;<a href=\"https:\">Tribunflores.com</a>&nbsp;dengan judul Wisata Flores, Bukit Watunariwowo &quot;Bukit Avatar&quot; di Bajawa Ngada,&nbsp;<a href=\"https://flores.tribunnews.com/2024/01/24/wisata-flores-bukit-watunariwowo-bukit-avatar-di-bajawa-ngada\">https://flores.tribunnews.com/2024/01/24/wisata-flores-bukit-watunariwowo-bukit-avatar-di-bajawa-ngada</a>.<br />\r\nPenulis: Cristin Adal | Editor: Cristin Adal</p>\r\n', 'admin', 3, '2024-05-28 23:14:03', '2024-06-02 16:52:36'),
+(5, '3310097196.jpg', 'PUNCAK WOLOBOBO', '<p>RADAR JOGJA -&nbsp;Bukit Wolobobo terletak di Desa Turekisa, Kecamatan Golewa Barat,&nbsp;<a href=\"https://radarjogja.jawapos.com/tag/kabupaten-ngada\">Kabupaten Ngada</a>,&nbsp;<a href=\"https://radarjogja.jawapos.com/tag/flores\">Flores</a>&nbsp;Nusa Tenggara Timur.</p>\r\n\r\n<p>Karena Bukit ini diselimuti awan,orang-orang menyebutnya dengan julukan&nbsp;<a href=\"https://radarjogja.jawapos.com/tag/negeri-di-atas-awan\">negeri di atas awan</a>.<br />\r\n&nbsp;</p>\r\n\r\n<p>Untuk pergi ke&nbsp;<a href=\"https://radarjogja.jawapos.com/tag/puncak-wolobobo\">Puncak Wolobobo</a>, pengunjung tidak perlu risau pada akses jalan.</p>\r\n\r\n<p>Dari Kota Bajawa, hanya dibutuhkan waktu kurang dari 10 menit saja. Kondisi jalannya pun sangat baik.</p>\r\n', 'admin', 4, '2024-05-28 23:18:12', '2024-06-02 16:52:10');
 
 -- --------------------------------------------------------
 
@@ -165,7 +176,7 @@ INSERT INTO `tempat_wisata` (`id_tempat_wisata`, `image_wisata`, `nama_wisata`, 
 
 CREATE TABLE `tentang` (
   `id_tentang` int NOT NULL,
-  `deskripsi` text COLLATE utf8mb4_general_ci,
+  `deskripsi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -175,7 +186,7 @@ CREATE TABLE `tentang` (
 --
 
 INSERT INTO `tentang` (`id_tentang`, `deskripsi`, `created_at`, `updated_at`) VALUES
-(1, NULL, '2024-05-28 03:19:55', '2024-05-28 03:19:55');
+(1, '<p>Bajawa adalah kecamatan yang juga menjadi ibu kota dari Kabupaten Ngada, Provinsi Nusa Tenggara Timur. Bajawa ini terletak di pulau Flores dengan luas wilayahnya sekitar 137, 36 km2.&nbsp;Karena ketinggiannya Bajawa memiliki iklim yang relatif sejak dan udara yang segar.&nbsp;Daerah ini juga dikenal dengan keindahan pegunungannya.&nbsp;Keanekaragaman budaya disini tercermin dalam tradisi adat, bahasa, dan seni budaya. Kaya akan berbagai kuliner dan teknik pengawetan makanan dan acara adat seperti seperti hui wu&rsquo;u, uta tabha, ra&rsquo;a rete, po&rsquo;o, nasi kacang, ikan lawar, rompe rampe,tumis pucuk labu, nasi jagung dan acara adat reba.&nbsp;</p>\r\n', '2024-05-28 03:19:55', '2024-06-03 03:34:28');
 
 -- --------------------------------------------------------
 
@@ -187,12 +198,12 @@ CREATE TABLE `users` (
   `id_user` int NOT NULL,
   `id_role` int DEFAULT NULL,
   `id_active` int DEFAULT '2',
-  `en_user` varchar(75) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `token` char(6) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `name` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `image` varchar(100) COLLATE utf8mb4_general_ci DEFAULT 'default.svg',
-  `email` varchar(75) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `password` varchar(75) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `en_user` varchar(75) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `token` char(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `image` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'default.svg',
+  `email` varchar(75) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `password` varchar(75) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -290,7 +301,7 @@ INSERT INTO `user_access_sub_menu` (`id_access_sub_menu`, `id_role`, `id_sub_men
 
 CREATE TABLE `user_menu` (
   `id_menu` int NOT NULL,
-  `menu` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL
+  `menu` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -311,7 +322,7 @@ INSERT INTO `user_menu` (`id_menu`, `menu`) VALUES
 
 CREATE TABLE `user_role` (
   `id_role` int NOT NULL,
-  `role` varchar(35) COLLATE utf8mb4_general_ci DEFAULT NULL
+  `role` varchar(35) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -331,7 +342,7 @@ INSERT INTO `user_role` (`id_role`, `role`) VALUES
 
 CREATE TABLE `user_status` (
   `id_status` int NOT NULL,
-  `status` varchar(35) COLLATE utf8mb4_general_ci DEFAULT NULL
+  `status` varchar(35) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -352,9 +363,9 @@ CREATE TABLE `user_sub_menu` (
   `id_sub_menu` int NOT NULL,
   `id_menu` int DEFAULT NULL,
   `id_active` int DEFAULT '2',
-  `title` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `url` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `icon` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL
+  `title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `url` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `icon` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -384,11 +395,11 @@ INSERT INTO `user_sub_menu` (`id_sub_menu`, `id_menu`, `id_active`, `title`, `ur
 
 CREATE TABLE `video` (
   `id_video` int NOT NULL,
-  `thumbnail` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `link_video` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `nama_video` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `deskripsi` text COLLATE utf8mb4_general_ci,
-  `author` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `thumbnail` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `link_video` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `nama_video` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `deskripsi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `author` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `penonton` int DEFAULT '0',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -399,8 +410,15 @@ CREATE TABLE `video` (
 --
 
 INSERT INTO `video` (`id_video`, `thumbnail`, `link_video`, `nama_video`, `deskripsi`, `author`, `penonton`, `created_at`, `updated_at`) VALUES
-(1, '492517398.jpg', 'https://www.youtube.com/embed/F-9Pf0Hv1fs', 'Ngantuk, TAPI LECLERC MENANG!! - Akhir Kutukan Leclerc di Monako &amp; Red Bull Ambyar Lagi...', '<p>Dukung kami dengan donasi di Saweria: <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbU5zdzNFWTZ5RHhGRXkzUWxMR1ZjejRLUldud3xBQ3Jtc0trNWpGLTZ4aDdUbGpvUjRiY3UxNG5BbzM4SEw4S2xLamRyUFNxWTdjUXNMekpzaHE5NWxJa2t6SW91TVFfdkw2YmM2NHk3UXFSYmdYYkJWTWk2ZkdBaGFtaXJCVWVwTmJ1cWY1ZHlBWENGbWdpMmN3RQ&amp;q=https%3A%2F%2Fsaweria.co%2FF1SpeedIndonesia&amp;v=F-9Pf0Hv1fs\" target=\"_blank\">https://saweria.co/F1SpeedIndonesia</a> Follow sosial media kami lainnya: Instagram: <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa2QzTF92ZmxUUjBWRllJZGIxTWE0M0I3SnVrQXxBQ3Jtc0tsT1Z4RGNvMjR3NXIzSV9rV3FVME5kZlhfdkpKalJCUnhtN21lTF9HX3NqTjhVZUVJTnZqbVJkQllOMFAzTjZhMjd3eVJlWjNRR1lNTXBBMU5fU3VlcS1FWWJRVDNOSFdqYlR5emxNTndVMVJIVUtDOA&amp;q=https%3A%2F%2Fwww.instagram.com%2Ff1_speed.indonesia%2F&amp;v=F-9Pf0Hv1fs\" target=\"_blank\">&nbsp;<img alt=\"\" src=\"https://www.gstatic.com/youtube/img/watch/social_media/instagram_1x.png\" />&nbsp;/&nbsp;f1_speed.indonesia&nbsp;&nbsp;</a> Twitter: <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbS01ZzNPaWFRcmlXQWl5TVVyZTJWRW5kV0VLZ3xBQ3Jtc0tsOURBcDViMHBmZllXS2JPZXpOaXdSeVJtdS1qYjltVXltN2phN05HZFpFRjU5S2JFRDRWdTA3V1RaeUZEYkhTTlZteEcwbFJKSEtOWTZmYVFPTGRydm5ibkhiZ1B3N1ZSOGpZWjJUbmxMWWxveEdVVQ&amp;q=https%3A%2F%2Ftwitter.com%2Ff1speed_indo&amp;v=F-9Pf0Hv1fs\" target=\"_blank\">&nbsp;<img alt=\"\" src=\"https://www.gstatic.com/youtube/img/watch/social_media/twitter_1x_v2.png\" />&nbsp;/&nbsp;f1speed_indo&nbsp;&nbsp;</a></p>\r\n', 'develoepr', NULL, '2024-05-28 02:26:10', '2024-05-28 02:32:52'),
-(2, '3282029717.jpg', 'https://www.youtube.com/embed/j9QmMEWmcfo', 'SSL, TLS, HTTPS Explained', '<p>To get better at system design, subscribe to our weekly newsletter: <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa3hHV0xWdS1sOFlUZTJ3TVBrR21saGtOdEJDZ3xBQ3Jtc0trUzlFaHRTMGRBMGpSRmRKdVlGM2VXMklWd3F3M0RIa25MMDk4OUFuM0FCMkNaN2h5UXJlYmgyQWNLNmNuU0NmbjRsY196c0NVYmY0MjVkQU5aZzZuenlZaUg1dUdzamFXRWNWX3Z1X1paWDJvTXNGYw&amp;q=https%3A%2F%2Fbit.ly%2F3tfAlYD&amp;v=j9QmMEWmcfo\" target=\"_blank\">https://bit.ly/3tfAlYD</a> Checkout our bestselling System Design Interview books: Volume 1: <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbm5YUjJ6bXdteVphS0ZrMmdYdjBiaXRhWVJXZ3xBQ3Jtc0tuYU1lc0F1SlI2aDY4Q0gyTEFlUFFmYjlnY2VJZzMtVFBVc1NkRlJFYnZhR0tBd1VDR1BzQ3Nfck16ZHE4anMwSldFTnRib2VScW5kWVhVR3JocEprR1NQcWFYZXhNYi1IZm5Ba01VM1NrSldUV3ZIMA&amp;q=https%3A%2F%2Famzn.to%2F3Ou7gkd&amp;v=j9QmMEWmcfo\" target=\"_blank\">https://amzn.to/3Ou7gkd</a> Volume 2: <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbC1JSDllUE9LZW9PWWZBaGdfY2REa3FVc2g0QXxBQ3Jtc0tuelNQSVdtOGpOeTdCcEM1RGtlVVFlQTdFLXJsNGhrQVNVUkRGZXQzSHo4MEM4NXAyT3piS3VPUF9yV0VUM3B5Rmx0X21LTlIwcm1NT0Jwb3NUUllqNV9EUk5tOHBBWTlkRTJUVDZJeHo1ZHdzYVJOOA&amp;q=https%3A%2F%2Famzn.to%2F3HqGozy&amp;v=j9QmMEWmcfo\" target=\"_blank\">https://amzn.to/3HqGozy</a> ABOUT US: Covering topics and trends in large-scale system design, from the authors of the best-selling System Design Interview series.</p>\r\n', 'develoepr', 6, '2024-05-28 02:51:24', '2024-05-28 07:53:49');
+(5, '2553248616.jpg', 'https://www.youtube.com/embed/04jp8nQ1Pbk', 'Resep Ra\\\\\\&#039;a Rete Ngana || Makanan Khas Bajawa - Ngada - NTT', '', 'admin', 2, '2024-05-28 22:21:22', '2024-06-02 20:27:00'),
+(13, '672289354.jpg', 'https://www.youtube.com/embed/W2w5xvAE23c', 'MENIKMATI INDAHNYA PESONA WISATA ALAM AIR TERJUN OGI - BAJAWA', '', 'admin', 4, '2024-06-02 19:38:10', '2024-06-02 19:40:25'),
+(14, '3088673147.jpg', 'https://www.youtube.com/embed/tw-EU_EvAE4', 'Hui Wu\\&#039;u', '', 'admin', 1, '2024-06-02 19:45:59', '2024-06-02 19:46:32'),
+(15, '3991695924.jpg', 'https://www.youtube.com/embed/64WxARF6l8o', 'Pesona Bukit Avatar, Langa-Bajawa', '', 'admin', 4, '2024-06-02 19:52:03', '2024-06-04 20:27:41'),
+(16, '3206268564.jpg', 'https://www.youtube.com/embed/8TXDXGFrDf8', 'Puncak Bukit Wolobobo', '', 'admin', 1, '2024-06-02 20:34:17', '2024-06-03 01:25:21'),
+(17, '993016177.jpeg', 'https://www.youtube.com/embed/pXH0pxdN0Ew', 'PESTA ADAT REBA KAMPUNG BOBOU 10-02-2022, BAJAWA KAB.NGADA NTT', '', 'admin', 1, '2024-06-02 22:07:51', '2024-06-02 22:11:15'),
+(18, '1952159524.jpg', 'https://www.youtube.com/embed/X7Oj3P_DVk4&amp;t=400s', 'UTA TABHA - Saksi Sejarah Dunia Pangan Tradisional', '', 'admin', 1, '2024-06-02 22:42:41', '2024-06-03 01:34:46'),
+(19, '1797939205.jpg', 'https://www.youtube.com/embed/D7X1V9l5fio', 'MAKANAN KHAS BAJAWA||NASI KACANG HITAM', '', 'admin', 2, '2024-06-03 01:17:53', '2024-06-03 01:22:07'),
+(20, '3582948022.jpg', 'https://www.youtube.com/embed/Hn97sOmqt8Y', 'RW DAGING ANJING||KHAS BAJAWA', '', 'admin', 2, '2024-06-03 03:29:55', '2024-06-05 10:27:52');
 
 --
 -- Indexes for dumped tables
@@ -519,31 +537,31 @@ ALTER TABLE `auth`
 -- AUTO_INCREMENT untuk tabel `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id_galeri` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_galeri` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenis_kuliner`
 --
 ALTER TABLE `jenis_kuliner`
-  MODIFY `id_jenis_kuliner` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_jenis_kuliner` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `kontak`
 --
 ALTER TABLE `kontak`
-  MODIFY `id_kontak` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_kontak` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `kuliner`
 --
 ALTER TABLE `kuliner`
-  MODIFY `id_kuliner` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_kuliner` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `tempat_wisata`
 --
 ALTER TABLE `tempat_wisata`
-  MODIFY `id_tempat_wisata` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_tempat_wisata` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tentang`
@@ -597,7 +615,7 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT untuk tabel `video`
 --
 ALTER TABLE `video`
-  MODIFY `id_video` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_video` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

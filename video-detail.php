@@ -62,7 +62,7 @@ if (!isset($_GET['post'])) {
                     <div class="ltn__gallery-item-inner">
                       <div class="ltn__gallery-item-img">
                         <a href="<?= $data['link_video'] ?>" data-rel="lightcase:myCollection">
-                          <img src="assets/img/thumbnail/<?= $data['thumbnail'] ?>" alt="Image">
+                          <img src="assets/img/thumbnail/<?= $data['thumbnail'] ?>" style="width: 100%; height: 200px; object-fit: cover;" alt="Image">
                           <span class="ltn__gallery-action-icon">
                             <i class="fas fa-search"></i>
                           </span>

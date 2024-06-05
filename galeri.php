@@ -31,7 +31,7 @@ require_once("templates/top.php"); ?>
           <div class="ltn__gallery-item-inner">
             <div class="ltn__gallery-item-img">
               <a href="assets/img/galeri/<?= $data['image_galeri'] ?>" data-rel="lightcase:myCollection">
-                <img src="assets/img/galeri/<?= $data['image_galeri'] ?>" alt="Image">
+                <img src="assets/img/galeri/<?= $data['image_galeri'] ?>" style="width: 100%; height: 250px; object-fit: cover;" alt="Image">
                 <span class="ltn__gallery-action-icon">
                   <i class="fas fa-search"></i>
                 </span>

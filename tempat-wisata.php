@@ -29,7 +29,7 @@ require_once("templates/top.php"); ?>
         <div class="col-lg-4 col-sm-6 col-12">
           <div class="ltn__blog-item ltn__blog-item-3">
             <div class="ltn__blog-img">
-              <a href="tempat-wisata-detail?post=<?= $data['id_tempat_wisata'] ?>"><img src="assets/img/wisata/<?= $data['image_wisata'] ?>" alt="#"></a>
+              <a href="tempat-wisata-detail?post=<?= $data['id_tempat_wisata'] ?>"><img src="assets/img/wisata/<?= $data['image_wisata'] ?>" style="width: 100%; height: 300px; object-fit: cover;" alt="#"></a>
             </div>
             <div class="ltn__blog-brief">
               <div class="ltn__blog-meta">
