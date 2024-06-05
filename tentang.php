@@ -27,13 +27,13 @@ require_once("templates/top.php"); ?>
     <div class="row">
       <div class="col-lg-6 align-self-center">
         <div class="about-us-img-wrap about-img-left">
-          <img src="assets/img/tentang.jpg" style="width: 100%; height: 500px; object-fit: cover;" alt="About Us Image">
+          <img src="assets/img/tentang.jpg" style="width: 90%; height: 500px; object-fit: cover;" alt="About Us Image">
         </div>
       </div>
       <div class="col-lg-6 align-self-center">
         <div class="about-us-info-wrap">
           <div class="section-title-area ltn__section-title-2">
-            <h1 class="section-title">Wisata Kuliner & Obyek Wisata Bajawa</h1>
+            <h1 class="section-title" style="font-size: 40px;">Wisata Kuliner & Obyek Wisata Bajawa</h1>
             <?php foreach ($views_tentang as $data) {
               echo $data['deskripsi'];
             } ?>
