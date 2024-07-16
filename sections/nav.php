@@ -35,7 +35,6 @@
                 <a href="#"><i class="icon-user"></i></a>
                 <ul>
                   <li><a href="auth/">Sign in</a></li>
-                  <li><a href="auth/register">Register</a></li>
                 </ul>
               </li>
             </ul>
