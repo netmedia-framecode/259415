@@ -108,11 +108,8 @@ require_once("../templates/views_top.php"); ?>
                               <input type="url" name="link_video" value="<?= $data['link_video'] ?>" class="form-control" id="link_video" required>
                             </div>
                             <div class="form-group">
-                              <label for="edit-deskripsi<?= $data['id_video'] ?>">Deskripsi</label>
-                              <textarea name="deskripsi" class="form-control" id="edit-deskripsi<?= $data['id_video'] ?>" rows="3"><?= $data['deskripsi'] ?></textarea>
-                              <script>
-                                CKEDITOR.replace('edit-deskripsi<?= $data['id_video'] ?>');
-                              </script>
+                              <label for="">Deskripsi</label>
+                              <textarea name="deskripsi" class="form-control" id="" rows="3"><?= strip_tags($data['deskripsi']) ?></textarea>
                             </div>
                           </div>
                           <div class="modal-footer justify-content-center border-top-0">
